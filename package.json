@@ -1,0 +1,31 @@
+{
+  "name": "ssf07",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "css-build": "node-sass --omit-source-map-url sass/mystyles.scss public/css/mystyles.css",
+    "css-watch": "npm run css-build -- --watch",
+    "start": "npm run css-watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://kanzy12@github.com/kanzy12/ssf07.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kanzy12/ssf07/issues"
+  },
+  "homepage": "https://github.com/kanzy12/ssf07#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "mysql": "^2.17.1"
+  },
+  "devDependencies": {
+    "bulma": "^0.7.5",
+    "bulmaswatch": "^0.7.2",
+    "node-sass": "^4.12.0"
+  }
+}

@@ -1,0 +1,35 @@
+<div class="section">
+    <h2 class="title is-2">Category: {{category}}</h2>
+</div>
+<div>
+    <span>
+        <a class="button" {{#if noPrevious}}disabled{{else}}href="/category?category={{category}}&page={{previousPage}}"{{/if}}>Previous Page</a>
+    </span>
+    <span>
+        <a class="button" {{#if noNext}}disabled{{else}}href="/category?category={{category}}&page={{nextPage}}"{{/if}}>Next Page</a>
+    </span>
+</div>
+<div class="is-size-4">
+    Displaying {{firstNum}} to {{lastNum}} of {{numApps}}
+</div>
+<div class="tile is-ancestor is-vertical">
+        {{#each apps as |clusterOf4|}}
+        <div class="tile is-parent">
+            {{#each clusterOf4}}
+            <div class="tile is-parent is-3">
+                <a href="/film/{{this.app_id}}">
+                    <div class="tile is-child box has-background-grey-lighter app-child-tile">
+                        <div class="title is-5 has-text-primary" style="height: 66px">{{this.name}}</div>
+                        <div>
+                            Installs: {{this.installs}}
+                        </div>
+                        <div>
+                            Rating: {{{rating this.rating}}} 
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {{/each}}
+        </div>
+        {{/each}}
+</div>
